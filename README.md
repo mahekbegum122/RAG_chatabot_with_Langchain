@@ -1,5 +1,12 @@
 # Azure AI RAG Chatbot for Internship Assessment
 
+### Student Information
+
+- **Name:** Mahek Begum  
+- **Final Year Student**  
+- **Sreenidhi Institute of Science and Technology, Hyderabad**  
+- **Branch:** Information Technology (CSE)
+
 ## Problem Statement
 Students and interns often need to understand long technical or internship-related documents quickly. Manual reading and searching through PDFs is inefficient and time-consuming.
 
