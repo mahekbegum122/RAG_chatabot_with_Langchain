@@ -1,39 +1,49 @@
-# RAG chatbot powered by 🔗 Langchain, OpenAI, Google Generative AI and Hugging Face 🤗
+# Azure AI RAG Chatbot for Internship Assessment
 
-<div align="center">
-  <img src="https://github.com/AlaGrine/RAG_chatabot_with_Langchain/blob/main/data/docs/RAG_architecture.png" >
-  <figcaption>RAG architecture with Langchain components.</figcaption>
-</div>
+## Problem Statement
+Students and interns often need to understand long technical or internship-related documents quickly. Manual reading and searching through PDFs is inefficient and time-consuming.
 
-## Project Overview <a name="overview"></a>
+This project solves the problem by building an AI-powered chatbot that answers questions directly from documents using Retrieval-Augmented Generation (RAG).
 
-Although Large Language Models (LLMs) are powerful and capable of generating creative content, they can produce outdated or incorrect information as they are trained on static data. To overcome this limitation, Retrieval Augmented Generation (RAG) systems can be used to connect the LLM to external data and obtain more reliable answers.
+## Target Users
+- Engineering students
+- Interns
+- Freshers preparing for roles in AI, Data, and Software Engineering
 
-The aim of this project is to build a RAG chatbot in Langchain powered by [OpenAI](https://platform.openai.com/overview), [Google Generative AI](https://ai.google.dev/?hl=en) and [Hugging Face](https://huggingface.co/) **APIs**. You can upload documents in txt, pdf, CSV, or docx formats and chat with your data. Relevant documents will be retrieved and sent to the LLM along with your follow-up questions for accurate answers.
+## Why This Problem Was Chosen
+As a student, I regularly work with lengthy internship descriptions, technical PDFs, and learning materials. This chatbot helps extract meaningful answers instantly using AI, improving productivity and understanding.
 
-Throughout this project, we examined each component of the RAG system from document loader to conversational retrieval chain. Additionally, we developed a user interface using [streamlit](https://streamlit.io/) application.
+## Solution Overview
+The chatbot uses a Retrieval-Augmented Generation (RAG) pipeline:
+1. Documents are loaded and split into chunks
+2. Embeddings are generated from text
+3. Vectors are stored for similarity search
+4. Relevant chunks are retrieved based on user queries
+5. A Large Language Model generates contextual answers
 
-## Installation <a name="installation"></a>
+## Tech Stack
+- Python
+- LangChain
+- Streamlit
+- OpenAI API (for development)
+- Azure OpenAI / Azure AI Foundry (production-ready design)
 
-This project requires Python 3 and the following Python libraries installed:
+## AI & Cloud Services Used
+- **LLM**: GPT-based language models
+- **Embeddings**: Text embeddings for semantic search
+- **Vector Search**: FAISS-based retrieval
+- **UI**: Streamlit web interface
 
-`langchain` ,`langchain-openai`, `langchain-google-genai`, `chromadb`, `streamlit`, `streamlit`
+## Azure AI Foundry Integration (Design Explanation)
+This solution is designed to be deployed using:
+- Azure AI Foundry for managing AI workflows
+- Azure OpenAI Service for LLMs and embeddings
+- Azure Blob Storage for document storage
+- Azure AI Search for scalable vector indexing
 
-The full list of requirements can be found in `requirements.txt`
+Due to time and subscription constraints, the chatbot is demonstrated locally. However, the architecture is fully compatible with Azure AI Foundry and Azure OpenAI services.
 
-## Instructions <a name="instructions"></a>
-
-To run the app locally:
-
-1. Create a virtual environment: `python -m venv langchain_env`
-2. Activate the virtual environment : `.\langchainenv\Scripts\activate` on Windows.
-3. Run the following command in the directory: `cd RAG_Chatabot_Langchain`
-4. Install the required dependencies `pip install -r requirements.txt`
-5. Start the app: `streamlit run RAG_app.py`
-6. In the sidebar, select the LLM provider (OpenAI, Google Generative AI or HuggingFace), choose an LLM (GPT-3.5, GPT-4, Gemini-pro or Mistral-7B-Instruct-v0.2), adjust its parameters, and insert your API keys.
-7. Create or load a Chroma vectorstore.
-8. Chat with your documents: ask questions and get 🤖 AI answers.
-
-## Blog post <a name="blog_post"></a>
-
-I wrote a blog post about this project. You can find it [here](https://medium.com/@alaeddine.grine/rag-chatbot-powered-by-langchain-openai-google-generative-ai-and-hugging-face-apis-6a9b9d7d59db)
+## How to Run the Project
+```bash
+pip install -r requirements.txt
+streamlit run RAG_app.py
